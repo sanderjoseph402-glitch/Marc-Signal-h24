@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ht">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101526">
+<title>Robo Signal — Pocket Option</title>
+<style>
+:root{--bg:#0b1020;--panel:#151d31;--panel2:#1b2640;--line:#2c3957;--text:#f4f7ff;--muted:#aab6ce;--green:#21d69a;--red:#ff5e6c;--yellow:#ffd166;--blue:#7c8cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2850 0,#0b1020 55%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}
+.wrap{max-width:760px;margin:auto;padding:20px 15px 36px}.top{display:flex;align-items:center;gap:12px;margin-bottom:20px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#21d69a,#6579ff);display:grid;place-items:center;font-size:24px;font-weight:900;color:#081323}.title{font-size:22px;font-weight:800}.sub{font-size:13px;color:var(--muted);margin-top:3px}.badge{margin-left:auto;border:1px solid #345c55;background:#12382f;color:#83f3ca;border-radius:99px;padding:7px 10px;font-size:11px;font-weight:700}
+.hero,.card{background:linear-gradient(145deg,rgba(27,38,64,.96),rgba(17,25,43,.98));border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 12px 35px #0002}.hero h1{font-size:25px;line-height:1.15;margin:0 0 9px}.hero p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tag{border:1px solid var(--line);background:#10182a;border-radius:9px;padding:7px 10px;font-size:12px;color:#dce5fb}
+h2{font-size:17px;margin:0 0 14px}.fieldrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;color:var(--muted);font-size:12px;margin-bottom:7px}.field select,.field input{width:100%;background:#0e1628;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);font-size:14px;outline:none}
+.drop{display:block;border:1.5px dashed #52668d;background:#10182a;border-radius:16px;padding:22px 14px;text-align:center;cursor:pointer}.drop .icon{font-size:32px}.drop strong{display:block;margin:8px 0 5px}.drop span{color:var(--muted);font-size:12px;line-height:1.4}.drop input{display:none}.preview{display:none;margin-top:12px}.preview img{display:block;width:100%;max-height:360px;object-fit:contain;border-radius:12px;background:#080c16;border:1px solid var(--line)}.filemeta{font-size:12px;color:var(--muted);margin-top:8px;word-break:break-all}
+button{border:0;border-radius:12px;padding:14px 16px;font-size:15px;font-weight:800;cursor:pointer}.primary{width:100%;margin-top:13px;background:linear-gradient(90deg,#23d89b,#4db8ff);color:#071522}.secondary{background:#25324d;color:#eaf0ff}.result{display:none}.signal{border-radius:14px;padding:15px;display:flex;align-items:center;gap:12px;margin-bottom:13px}.signal .big{font-size:29px}.signal strong{display:block;font-size:20px}.signal small{display:block;margin-top:4px;opacity:.85}.wait{background:#493b18;border:1px solid #80672b}.signalgreen{background:#123d32;border:1px solid #237c62}.signalred{background:#47232c;border:1px solid #873743}.checks{display:grid;gap:9px}.check{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border-radius:10px;background:#0e1628;font-size:13px}.check span:first-child{color:var(--muted)}.note{font-size:12px;color:var(--muted);line-height:1.55;margin-top:13px}.warning{border-left:3px solid var(--yellow);padding:10px 12px;background:#322b1b;color:#f5dfaa;border-radius:0 10px 10px 0;font-size:12px;line-height:1.5;margin-top:12px}.footer{text-align:center;color:#8290ab;font-size:11px;padding:8px}
+@media(max-width:420px){.wrap{padding:15px 11px}.hero,.card{padding:15px}.hero h1{font-size:23px}.badge{font-size:10px}.fieldrow{gap:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="logo">R</div><div><div class="title">ROBO SIGNAL</div><div class="sub">Asistan analiz pou screenshot graf</div></div><div class="badge">DEMO • V1</div></header>
+  <section class="hero">
+    <h1>Analize graf ou a 📊</h1>
+    <p>Telechaje yon screenshot Pocket Option pou òganize analiz la. Vèsyon sa a se koòdone premye etap la; li poko gen AI konekte pou li entèprete imaj la otomatikman.</p>
+    <div class="tagrow"><div class="tag">📸 Screenshot</div><div class="tag">🟢 BUY / 🔴 SELL / 🟡 WAIT</div><div class="tag">📱 Adapte ak iPhone</div></div>
+  </section>
+  <section class="card">
+    <h2>1. Detay graf la</h2>
+    <div class="fieldrow">
+      <div class="field"><label for="pair">Pè / mache</label><select id="pair"><option>CAD/JPY OTC</option><option>EUR/USD OTC</option><option>GBP/USD OTC</option><option>USD/JPY OTC</option><option>Lòt</option></select></div>
+      <div class="field"><label for="timeframe">Tan chak bouji</label><select id="timeframe"><option>M1 — 1 minit</option><option>M5 — 5 minit</option><option>M15 — 15 minit</option><option>Pa konnen</option></select></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>2. Mete screenshot la</h2>
+    <label class="drop" for="shot"><div class="icon">⬆️</div><strong>Chwazi screenshot graf la</strong><span>PNG, JPG oswa JPEG • Pi bon si bouji yo ak MACD vizib</span><input id="shot" type="file" accept="image/*"></label>
+    <div class="preview" id="preview"><img id="image" alt="Aperçu screenshot ou a"><div class="filemeta" id="filemeta"></div><button class="secondary" id="remove" type="button" style="margin-top:10px">Retire foto a</button></div>
+    <button class="primary" id="analyze" type="button">Prepare analiz la</button>
+    <div class="note">Bouton sa a verifye si ou mete foto a epi prepare pwochen etap la. Li pa li graf la ni li pa jenere siyal finansye otomatikman nan vèsyon sa a.</div>
+  </section>
+  <section class="card result" id="result" aria-live="polite">
+    <h2>Rezilta preparasyon</h2>
+    <div class="signal wait"><div class="big">🟡</div><div><strong>WAIT — analiz AI poko konekte</strong><small>Nou pa ka bay BUY oswa SELL seryezman nan paj sa a sèlman.</small></div></div>
+    <div class="checks"><div class="check"><span>Mache</span><b id="outpair">—</b></div><div class="check"><span>Tan graf</span><b id="outtf">—</b></div><div class="check"><span>Screenshot</span><b id="outfile">—</b></div><div class="check"><span>Siyal</span><b>Pa disponib nan V1</b></div></div>
+    <div class="warning">Pa mete lajan sou yon siyal ki pa verifye. OTC ka gen mouvman enprevizib; okenn sistèm pa garanti pwofi.</div>
+  </section>
+  <section class="card">
+    <h2>3. Ki pwochen etap la?</h2>
+    <p style="color:var(--muted);font-size:13px;line-height:1.6;margin:0">Pou sit la analize screenshot la toutbon, nou bezwen konekte li ak yon sèvis AI atravè yon backend sekirize. Kle API pa dwe mete nan fichye HTML piblik la. Apre sa, nou ka teste rezilta yo sou kont demo anvan nenpòt desizyon.</p>
+  </section>
+  <div class="footer">Robo Signal • Pwototip pou aprantisaj • Pa yon konsèy finansye</div>
+</div>
+<script>
+const input=document.getElementById('shot'), preview=document.getElementById('preview'), img=document.getElementById('image'), meta=document.getElementById('filemeta'), result=document.getElementById('result');
+let objectUrl=null;
+input.addEventListener('change',()=>{
+ const f=input.files&&input.files[0]; if(!f)return;
+ if(!f.type.startsWith('image/')){alert('Tanpri chwazi yon fichye imaj.');input.value='';return;}
+ if(objectUrl)URL.revokeObjectURL(objectUrl);
+ objectUrl=URL.createObjectURL(f);img.src=objectUrl;meta.textContent=f.name+' • '+(f.size/1024).toFixed(0)+' KB';preview.style.display='block';result.style.display='none';
+});
+document.getElementById('remove').addEventListener('click',()=>{input.value='';if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=null;img.removeAttribute('src');preview.style.display='none';result.style.display='none';});
+document.getElementById('analyze').addEventListener('click',()=>{
+ if(!input.files||!input.files[0]){alert('Chwazi screenshot graf la anvan.');return;}
+ document.getElementById('outpair').textContent=document.getElementById('pair').value;
+ document.getElementById('outtf').textContent=document.getElementById('timeframe').value;
+ document.getElementById('outfile').textContent=input.files[0].name;
+ result.style.display='block';result.scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+</body>
+</html>
