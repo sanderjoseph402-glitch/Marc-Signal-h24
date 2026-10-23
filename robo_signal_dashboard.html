@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<title>ROBO SIGNAL — Dashboard</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#0e1b2d;--panel2:#12243a;--line:#213750;--text:#eef5ff;--muted:#8fa5c0;--green:#32e6a1;--red:#ff647c;--yellow:#ffd166;--blue:#57b8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#163a59 0,transparent 55%),var(--bg);color:var(--text);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:18px 14px 34px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:10px;align-items:center}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#42e5b0,#1684e7);display:grid;place-items:center;color:#061523;font-weight:950;font-size:17px;box-shadow:0 0 26px #32e6a133}.brand h1{font-size:18px;letter-spacing:1.4px;margin:0}.brand p{font-size:11px;color:var(--muted);margin:2px 0 0}.live{border:1px solid #245b4e;color:var(--green);border-radius:999px;padding:6px 10px;font-size:10px;letter-spacing:1px;white-space:nowrap}.live:before{content:"";display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px}
+h2{font-size:16px;margin:0 0 12px}.sub{color:var(--muted);font-size:12px;margin-top:-7px;margin-bottom:14px}.grid{display:grid;gap:12px}.metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:14px}.card{background:linear-gradient(145deg,#112239,#0b1727);border:1px solid var(--line);border-radius:16px;padding:14px;min-width:0;box-shadow:0 10px 28px #00000012}.metric-label{color:var(--muted);font-size:11px}.metric-value{font-size:20px;font-weight:800;margin-top:7px;letter-spacing:-.5px}.metric-foot{font-size:10px;color:var(--muted);margin-top:4px}.layout{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);align-items:stretch}.chart-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px}.pill{background:#172b42;border:1px solid #29445f;border-radius:9px;padding:7px 9px;color:#c9d9ed;font-size:11px}.chart{height:245px;width:100%;display:block;background:linear-gradient(180deg,#0b1828,#0a1523);border:1px solid #1b3047;border-radius:12px}.chart-note{font-size:11px;color:var(--muted);margin-top:9px}.signal{display:flex;align-items:center;gap:10px;margin:10px 0 14px}.signal-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#1a302f;color:var(--green);font-size:20px;font-weight:900}.signal strong{font-size:24px;letter-spacing:1px;color:var(--yellow)}.signal small{display:block;color:var(--muted);font-size:11px}.signal-state{margin-left:auto;border:1px solid #6a5630;color:var(--yellow);padding:5px 8px;border-radius:8px;font-size:10px}.meter{height:7px;background:#203249;border-radius:99px;overflow:hidden;margin:8px 0}.meter span{display:block;height:100%;width:50%;background:linear-gradient(90deg,#36dca1,#ffd166)}.btns{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:13px 0}.btn{border:1px solid var(--line);background:#14263b;color:var(--text);padding:10px 6px;border-radius:10px;font-weight:750;font-size:12px;cursor:pointer}.btn:active{transform:scale(.98)}.btn.buy{background:#10372f;border-color:#267c61;color:#56f0b7}.btn.sell{background:#3b202c;border-color:#884154;color:#ff8092}.btn.wait{background:#3a3020;border-color:#7d6331;color:#ffda7b}.upload{border:1px dashed #3a5876;border-radius:12px;padding:13px;text-align:center;background:#0b1929}.upload input{width:100%;font-size:12px;color:var(--muted)}.preview{display:none;max-width:100%;max-height:230px;object-fit:contain;border-radius:10px;margin:12px auto 0}.notice{font-size:11px;color:var(--muted);margin-top:12px;padding:10px;border-radius:10px;background:#0a1726;border:1px solid #1d3147}.bottom-grid{grid-template-columns:1fr 1fr;margin-top:14px}.row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #1d3045;font-size:12px}.row:last-child{border-bottom:0}.tag{font-size:10px;border-radius:6px;padding:3px 6px;background:#17372f;color:var(--green)}.tag.yellow{background:#3a3020;color:var(--yellow)}.tag.red{background:#3b202b;color:var(--red)}.footer{text-align:center;color:#7188a3;font-size:10px;margin:20px 0 0}.hidden{display:none!important}
+@media(max-width:720px){.wrap{padding:13px 10px 28px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.layout,.bottom-grid{grid-template-columns:1fr}.metric-value{font-size:19px}.chart{height:220px}.top{margin-bottom:14px}.brand h1{font-size:16px}.card{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">RS</div><div><h1>ROBO SIGNAL</h1><p>AI TRADING DASHBOARD · POCKET OPTION</p></div></div><div class="live">DEMO MODE</div></header>
+<section class="grid metrics">
+<div class="card"><div class="metric-label">Mache</div><div class="metric-value">Pocket Option</div><div class="metric-foot">Mache ou chwazi</div></div>
+<div class="card"><div class="metric-label">Dire bouji</div><div class="metric-value" id="timeframe">1 min</div><div class="metric-foot">Egzanp entèval</div></div>
+<div class="card"><div class="metric-label">Dènye siyal</div><div class="metric-value" id="lastSignal">TANN</div><div class="metric-foot">Pa yon siyal reyèl</div></div>
+<div class="card"><div class="metric-label">Konfyans modèl</div><div class="metric-value">—</div><div class="metric-foot">AI poko konekte</div></div>
+</section>
+<div class="grid layout">
+<section class="card"><div class="chart-head"><div><h2>Graf mache a</h2><div class="sub" style="margin:3px 0 0">Graf egzanp pou montre aparans dashboard la</div></div><select class="pill" id="tf" aria-label="Dire bouji"><option>1 min</option><option>5 min</option><option>15 min</option></select></div>
+<svg class="chart" viewBox="0 0 600 260" role="img" aria-label="Graf bouji egzanp">
+<defs><pattern id="g" width="60" height="43" patternUnits="userSpaceOnUse"><path d="M60 0H0V43" fill="none" stroke="#20354a" stroke-width="1"/></pattern></defs><rect width="600" height="260" fill="url(#g)"/>
+<path d="M0 183H600" stroke="#57b8ff" stroke-dasharray="5 5" opacity=".65"/><text x="530" y="176" fill="#57b8ff" font-size="10">Nivo</text>
+<g stroke-linecap="round" stroke-width="2">
+<path d="M35 52V92 M65 64V112 M95 83V131 M125 104V153 M155 125V174 M185 112V158 M215 98V145 M245 78V132 M275 64V110 M305 80V131 M335 104V153 M365 91V139 M395 69V119 M425 48V102 M455 61V111 M485 41V92 M515 29V77 M545 17V61 M575 9V48" stroke="#d9e8f6"/>
+<g fill="#ff647c" stroke="#ff647c"><rect x="28" y="61" width="14" height="22"/><rect x="58" y="76" width="14" height="22"/><rect x="88" y="95" width="14" height="23"/><rect x="118" y="117" width="14" height="22"/><rect x="148" y="139" width="14" height="22"/><rect x="178" y="125" width="14" height="21"/><rect x="208" y="108" width="14" height="22"/><rect x="298" y="91" width="14" height="22"/><rect x="328" y="116" width="14" height="22"/><rect x="448" y="74" width="14" height="22"/></g>
+<g fill="#32e6a1" stroke="#32e6a1"><rect x="88" y="101" width="14" height="15" opacity="0"/><rect x="178" y="122" width="14" height="20"/><rect x="208" y="107" width="14" height="22"/><rect x="238" y="87" width="14" height="28"/><rect x="268" y="73" width="14" height="25"/><rect x="358" y="101" width="14" height="24"/><rect x="388" y="78" width="14" height="27"/><rect x="418" y="57" width="14" height="28"/><rect x="478" y="49" width="14" height="28"/><rect x="508" y="36" width="14" height="27"/><rect x="538" y="23" width="14" height="26"/><rect x="568" y="14" width="14" height="23"/></g></g>
+<text x="16" y="20" fill="#8fa5c0" font-size="10">PRI EGZANP</text></svg>
+<div class="chart-note">⚠️ Sa a se yon desen demonstrasyon, li pa done mache an tan reyèl.</div>
+</section>
+<section class="card"><h2>Analiz ROBO SIGNAL</h2><div class="signal"><div class="signal-icon" id="sigIcon">Ⅱ</div><div><strong id="signalText">TANN</strong><small id="signalDesc">Chwazi yon foto graf pou kòmanse</small></div><div class="signal-state">DEMO</div></div>
+<div class="metric-label">Konfyans AI</div><div class="meter"><span style="width:0%" id="confidenceBar"></span></div><div class="metric-foot" id="confidenceText">Pa gen analiz AI konekte</div>
+<div class="btns"><button class="btn buy" data-signal="ACHETE">ACHETE</button><button class="btn sell" data-signal="VANN">VANN</button><button class="btn wait" data-signal="TANN">TANN</button></div>
+<div class="upload"><strong>📷 Mete foto graf ou</strong><p class="metric-foot">Chwazi yon screenshot nan galri iPhone ou</p><input id="chartFile" type="file" accept="image/*"><img id="preview" class="preview" alt="Aperçu foto graf ou"></div>
+<div class="notice">Vèsyon sa a se yon pwototip vizyèl. Bouton yo se pou teste koòdone a; yo pa analize mache a ni voye lòd. Pou AI reyèl, fòk nou konekte yon sèvis analiz atravè yon backend ki pwoteje kle API yo.</div>
+</section>
+</div>
+<div class="grid bottom-grid">
+<section class="card"><h2>Lis siveyans</h2><div class="row"><span>EUR/USD</span><span class="tag yellow">TANN</span></div><div class="row"><span>GBP/USD</span><span class="tag yellow">TANN</span></div><div class="row"><span>USD/JPY</span><span class="tag yellow">TANN</span></div><div class="row"><span>Gold (XAU/USD)</span><span class="tag yellow">TANN</span></div></section>
+<section class="card"><h2>Règ risk</h2><div class="row"><span>Risk pa tranzaksyon</span><strong>1–2% max.</strong></div><div class="row"><span>Martingale</span><span class="tag red">Evite</span></div><div class="row"><span>Konfimasyon obligatwa</span><span class="tag">Wi</span></div><div class="row"><span>Done an tan reyèl</span><span class="tag yellow">Pa konekte</span></div></section>
+</div>
+<div class="footer">ROBO SIGNAL · PWOTOTIP · Pa gen garanti pwofi</div>
+</div>
+<script>
+const tf=document.getElementById('tf');
+tf.addEventListener('change',()=>document.getElementById('timeframe').textContent=tf.value);
+document.querySelectorAll('[data-signal]').forEach(btn=>btn.addEventListener('click',()=>{
+ const s=btn.dataset.signal;
+ document.getElementById('lastSignal').textContent=s;
+ document.getElementById('signalText').textContent=s;
+ document.getElementById('signalDesc').textContent='Sèlman tès koòdone — pa yon analiz AI';
+ document.getElementById('sigIcon').textContent=s==='ACHETE'?'↗':s==='VANN'?'↘':'Ⅱ';
+ document.getElementById('confidenceBar').style.width='0%';
+ document.getElementById('confidenceText').textContent='Konfyans pa disponib: AI poko konekte';
+}));
+document.getElementById('chartFile').addEventListener('change',e=>{
+ const f=e.target.files&&e.target.files[0]; if(!f)return;
+ if(!f.type.startsWith('image/'))return;
+ const r=new FileReader();r.onload=()=>{const im=document.getElementById('preview');im.src=r.result;im.style.display='block';document.getElementById('signalDesc').textContent='Foto a parèt. AI poko konekte pou analize li.';};r.readAsDataURL(f);
+});
+</script>
+</body>
+</html>
